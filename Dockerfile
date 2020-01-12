@@ -13,7 +13,11 @@ RUN \
 	apt-get update \
 	&& apt-get install nano \
 	&& apt-get install apache2 --yes \
-	&& mkdir /var/www/html/sitio1 /var/www/html/sitio2
+	&& mkdir /var/www/html/sitio1 /var/www/html/sitio2 \
+	&& apt-get install proftpd --yes\
+	&& apt-get install ssh --yes \
+	&& apt-get install git --yes
+
 
 
 # Copiamos el index al directorio por defecto del servidor Web
@@ -31,5 +35,9 @@ RUN \
 	&& a2enmod ssl
 
 # Indicamos el puerto que utiliza la imagen
+EXPOSE 20
+EXPOSE 21
+EXPOSE 22
 EXPOSE 80
 EXPOSE 443
+EXPOSE 50000-50030
