@@ -14,12 +14,14 @@ RUN \
 	&& apt-get install nano \
 	&& apt-get install apache2 --yes \
 	&& mkdir /var/www/html/sitio1 /var/www/html/sitio2 \
-	&& apt-get install proftpd --yes\
+	&& apt-get install proftpd \
+	&& apt-get install openssl \
+	&& apt-get install unzip \ 
 	&& apt-get install ssh --yes \
 	&& apt-get install git --yes
 
 
-
+#Copiar confs,certificados y keys
 # Copiamos el index al directorio por defecto del servidor Web
 COPY index1.html index2.html sitio1.conf sitio2.conf sitio1.key sitio1.cer /
 
