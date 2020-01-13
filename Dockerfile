@@ -22,7 +22,8 @@ RUN \
 
 
 #Copiar confs,certificados y keys
-# Copiamos el index al directorio por defecto del servidor Web
+#Comando GIT para pull from ficheros edhernandez ftp
+#Copiamos el index al directorio por defecto del servidor Web
 COPY index1.html index2.html sitio1.conf sitio2.conf sitio1.key sitio1.cer /
 
 RUN \
